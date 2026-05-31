@@ -22,7 +22,7 @@ const user: IEmployee = {
 function sum(a: number, b: number): number {
   return a + b;
 }
-const result = sum(1, 2);
+const result: number = sum(1, 2);
 console.log(result); 
 
 
@@ -47,11 +47,11 @@ function formatText(str: string, format: 'uppercase' | 'lowercase'): string {
 formatText('Zakir', 'uppercase');
 
 
-function removeSpaces(text:string, symbol:string): string {
+function removeSpaces(text: string, symbol: string): string {
   return text.replaceAll(symbol, '');
 }
 
-const noSpaces = removeSpaces('К о д', ' ');
+const noSpaces: string = removeSpaces('К о д', ' ');
 console.log(noSpaces);
 
 
@@ -61,7 +61,7 @@ const users: IUser[] = [
   {id: 4 , name:'Мурад', age: 23, email:'Murad@test.com'}
 ];
 
-const filtrId = users.filter((user) => {
+const filtrId: IUser[] = users.filter((user: IUser) => {
   return user.id >= 3;
 });
 
