@@ -11,9 +11,9 @@ import { Collection } from './collection';
 })
 
 export class AppComponent {
-  companyName = 'РУМТИБЕТ'
-  guidesCollection = new Collection<string>(['Иван', 'Петя', 'Сарра']);
-  pricesCollection = new Collection<number>([ 100 , 200, 300]);
+  companyName: string = 'РУМТИБЕТ'
+  guidesCollection: Collection<string> = new Collection<string>(['Иван', 'Петя', 'Сарра']);
+  pricesCollection: Collection<number> = new Collection<number>([ 100 , 200, 300]);
   isPrimaryColor(checkColor: Color): boolean {
   return checkColor === Color.Red || checkColor === Color.Green || checkColor === Color.Blue ; 
 }
