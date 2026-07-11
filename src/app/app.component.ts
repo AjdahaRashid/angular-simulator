@@ -13,34 +13,34 @@ import { Collection } from './collection';
 export class AppComponent {
   companyName: string = 'РУМТИБЕТ'
   guidesCollection: Collection<string> = new Collection<string>(['Иван', 'Петя', 'Сарра']);
-  pricesCollection: Collection<number> = new Collection<number>([ 100 , 200, 300]);
+  pricesCollection: Collection<number> = new Collection<number>([100, 200, 300]);
   isPrimaryColor(checkColor: Color): boolean {
-  return checkColor === Color.Red || checkColor === Color.Green || checkColor === Color.Blue ; 
-}
+    return checkColor === Color.Red || checkColor === Color.Green || checkColor === Color.Blue;
+  }
 
-saveLastVisitDate(): void {
-  const now  = new Date().toISOString();
-  localStorage.setItem('lastVisitDate', now);
-}
+  saveLastVisitDate(): void {
+    const currentDate: string = new Date().toISOString();
+    localStorage.setItem('lastVisitDate', currentDate);
+  }
 
-incrementVisitCount(): void {
-  const storedCount = localStorage.getItem('visitCount');
-  let count = storedCount ? parseInt(storedCount, 10) : 0 ;
-  count++;
-  localStorage.setItem('visitCount', count.toString());
-}
+  incrementVisitCount(): void {
+    const storedCount: string | null = localStorage.getItem('visitCount');
+    let count: number = storedCount ? parseInt(storedCount, 10) : 0;
+    count++;
+    localStorage.setItem('visitCount', count.toString());
+  }
 
-constructor() {
-  this.saveLastVisitDate();
-  this.incrementVisitCount();
+  constructor() {
+    this.saveLastVisitDate();
+    this.incrementVisitCount();
 
-  console.log(this.isPrimaryColor(Color.Red));
-  console.log(this.isPrimaryColor(Color.Green));
+    console.log(this.isPrimaryColor(Color.Red));
+    console.log(this.isPrimaryColor(Color.Green));
 
-  console.log(this.guidesCollection.getAll());
-  console.log(this.guidesCollection.get(1));
+    console.log(this.guidesCollection.getAll());
+    console.log(this.guidesCollection.get(1));
 
-  this.pricesCollection.replace(0, 500);
-  console.log(this.pricesCollection.getAll());
-}
+    this.pricesCollection.replace(0, 500);
+    console.log(this.pricesCollection.getAll());
+  }
 }
