@@ -15,17 +15,17 @@ interface IUser {
   email: string,
   id: number,
   age?: number
-}
+};
 
 export interface IExtendedUser extends IUser {
   salary: number;
-}
+};
 
 export type UploadStatus = 'loading' | 'success' | 'error'
-export let uploadStatus: UploadStatus = 'success'
+export let uploadStatus: UploadStatus = 'success';
 
 export type TextFormat = 'uppercase' | 'lowercase' | 'capitalize'
-export let textFormat: TextFormat = 'lowercase'
+export let textFormat: TextFormat = 'lowercase';
 
 export function formatString(str: string, format: TextFormat): string {
 
@@ -37,16 +37,16 @@ export function formatString(str: string, format: TextFormat): string {
     return str.charAt(0).toLowerCase() + str.slice(1).toLowerCase();
   }
   return str;
-}
+};
 
 export function removeChar(str: string, char: string): string {
   return str.split(char).join('');
-}
+};
 
 export function suma(a: number, b: number): number {
   return a + b
-}
+};
 
-const filteredByName = users.filter((user: IUser): boolean => {
+const filteredByName: IUser[] = users.filter((user: IUser): boolean => {
   return user.name.startsWith('A')
-})
+});
