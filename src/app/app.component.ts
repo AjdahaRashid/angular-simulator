@@ -1,17 +1,46 @@
 import './training';
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Color } from './enums/Color';
 import { Collection } from './collection';
+import { DatePipe } from '@angular/common';
+
+interface Card {
+    image: string;
+    title: string;
+    description: string;
+  }
+
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule, DatePipe ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 
-export class AppComponent {
+
+export class AppComponent implements OnInit, OnDestroy{
   companyName: string = 'РУМТИБЕТ'
+  currentDate: Date = new Date();
+  private timerId: any;
+  count = 0
+  showTimer = true;
+  inputText = "";
+  isLoading = true;
+  increment() {
+    this.count++;
+  }
+  decrement() {
+    if (this.count > 0)
+      this.count--;
+  }
+  toggleView () {
+    this.showTimer = !this.showTimer
+  }
+  public selectedLocation: string = '';
+  public selectedDate: string = '';
+  public selectedParticipants: string = '';
   guidesCollection: Collection<string> = new Collection<string>(['Иван', 'Петя', 'Сарра']);
   pricesCollection: Collection<number> = new Collection<number>([100, 200, 300]);
   isPrimaryColor(checkColor: Color): boolean {
@@ -43,4 +72,32 @@ export class AppComponent {
     this.pricesCollection.replace(0, 500);
     console.log(this.pricesCollection.getAll());
   }
+  ngOnInit() {
+    this.timerId = setInterval(() => {
+      this.currentDate = new Date();
+    }, 1000);
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
+  }
+  ngOnDestroy() {
+    clearInterval(this.timerId)
+  }
+  cards: Card[] = [
+    {
+      image: '/images/guide-img.svg',
+      title: 'Опытный гид',
+      description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
+    },
+    {
+      image: '/images/safety-img.svg',
+      title: 'Безопасный поход',
+      description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
+    },
+    {
+      image: '/images/price-rag.svg',
+      title: 'Лояльные цены',
+      description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
+    }
+  ];
 }
