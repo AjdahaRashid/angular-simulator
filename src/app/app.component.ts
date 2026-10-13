@@ -21,7 +21,7 @@ interface Card {
 
 
 export class AppComponent implements OnInit, OnDestroy{
-  companyName: string = 'РУМТИБЕТ'
+  companyName: string = 'РУМТИБЕТ';
   currentDate: Date = new Date();
   private timerId: any;
   count: number = 0;
