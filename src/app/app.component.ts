@@ -24,18 +24,18 @@ export class AppComponent implements OnInit, OnDestroy{
   companyName: string = 'РУМТИБЕТ'
   currentDate: Date = new Date();
   private timerId: any;
-  count = 0
-  showTimer = true;
-  inputText = "";
-  isLoading = true;
-  increment() {
+  count: number = 0;
+  showTimer:boolean = true;
+  inputText:string = "";
+  isLoading:boolean = true;
+  increment(): void {
     this.count++;
   }
-  decrement() {
+  decrement(): void {
     if (this.count > 0)
       this.count--;
   }
-  toggleView () {
+  toggleView(): void {
     this.showTimer = !this.showTimer
   }
   public selectedLocation: string = '';

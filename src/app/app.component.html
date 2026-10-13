@@ -12,14 +12,26 @@
       </a>
     </div>
     <ul class="nav-links">
-      <li><a href="#">Главное</a></li>
-      <li><a href="#">Про гида</a></li>
-      <li><a href="#">Программа тура</a></li>
-      <li><a href="#">Стоимость</a></li>
-      <li><a href="#">Блог</a></li>
-      <li><a href="#">Контакты</a></li>
+      <li>
+        <a id="nav-home-link" href="#">Главное</a>
+      </li>
+      <li>
+        <a id="nav-guide-link" href="#">Про гида</a>
+      </li>
+      <li>
+        <a id="nav-tour-itinerary" href="#">Программа тура</a>
+      </li>
+      <li>
+        <a id="nav-price" href="#">Стоимость</a>
+      </li>
+      <li>
+        <a id="nav-price" href="#">Блог</a>
+      </li>
+      <li>
+        <a id="nav-price" href="#">Контакты</a>
+      </li>
     </ul>
-     <button class="btn-consult">Консультация</button>
+     <button id="consultation-btn" class="btn-consult">Консультация</button>
    <div class="header-right">
       <div class="header-info">
         @if (showTimer) {
@@ -28,12 +40,12 @@
     </div>
         } @else {
           <div class="header-counter">
-      <button (click)="increment()">+</button>
+      <button id="increment-count-btn" (click)="increment()">+</button>
       <span>{{ count }}</span>
-      <button (click)="decrement()">-</button>
+      <button id="decrement-count-btn" (click)="decrement()">-</button>
     </div>
         }
-        <button class="header-toggle" (click)="toggleView ()">{{showTimer ? 'показать счетчик' : 'показать таймер'}}</button>
+        <button id="toggle-view-button" class="header-toggle" (click)="toggleView ()">{{showTimer ? 'показать счетчик' : 'показать таймер'}}</button>
       </div>
     </div>
   </header>
@@ -75,8 +87,8 @@
 <section>
   <div class="story-card">
     <div class="duo-image">
-      <img class="mountains" src="/images/mountains-img.svg" alt="Горы">
-      <img class="chalet" src="/images/chalet-img.svg" alt="Шале, домик в горах">
+      <img class="mountains" src="/images/mountains-img.jpg" alt="Горы">
+      <img class="chalet" src="/images/chalet-img.jpg" alt="Шале, домик в горах">
       <img class="preview" src="/images/preview-img.svg" alt="плеер">
     </div>
     <div class="info">
@@ -88,7 +100,7 @@
         штат <br> Вирджиния, взял одно из самых странных слов в Lorem Ipsum,<br>
         "consectetur"и занялся его поисками в классической латинской <br> литературе.
       </p>
-      <button class="tour-btn">Программа тура</button>
+      <button id="tour-program-btn" class="tour-btn">Программа тура</button>
     </div>
   </div>
 </section>
@@ -110,13 +122,13 @@
         </div>
         }
       </div>
-      <button class="btn-primary">Стоимость программ</button>
+      <button id="program-cost-btn" class="btn-primary">Стоимость программ</button>
     </div>
     <div class="adventures-grid">
-      <img src="/images/canyon-oasis.svg" alt="Оазис в каньоне">
-      <img src="/images/man-in-canyon.svg" alt="Мужина в коньоне">
-      <img src="/images/snowy-mauntain-view.svg" alt="Заснеженый горный вид">
-      <img src="/images/mountain-valley.svg" alt="Горная долина">
+      <img src="/images/canyon-oasis.jpg" alt="Оазис в каньоне">
+      <img src="/images/man-in-canyon.jpg" alt="Мужина в коньоне">
+      <img src="/images/snowy-mauntain-view.jpg" alt="Заснеженый горный вид">
+      <img src="/images/mountain-valley.jpg" alt="Горная долина">
     </div>
   </div>
 </section> 
