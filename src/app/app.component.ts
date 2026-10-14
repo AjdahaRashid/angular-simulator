@@ -85,17 +85,17 @@ export class AppComponent implements OnInit, OnDestroy{
   }
   cards: Card[] = [
     {
-      image: '/images/guide-img.svg',
+      image: 'guide-img',
       title: 'Опытный гид',
       description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
     },
     {
-      image: '/images/safety-img.svg',
+      image: 'safety-img',
       title: 'Безопасный поход',
       description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
     },
     {
-      image: '/images/price-rag.svg',
+      image: 'price-rag',
       title: 'Лояльные цены',
       description: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.'
     }
